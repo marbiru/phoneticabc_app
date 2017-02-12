@@ -32,13 +32,41 @@ var lazyDictionary = [
 
 */
 
-document.getElementById("output").innerHTML = "failure";
+function translate_word() {
+    var word = document.getElementById("input").value;
+    return word;
+};
+
+/* function translate_word() {
+  
+  var codewords = [];
+  
+  var word = document.getElementById("input");
+  
+  var codewords = [];
+  
+  for (var i = 0; i < word.length; i++) {
+      var letterIndex = word.charCodeAt(i);
+      console.log("input letter " + i + " is " +letterIndex);
+      if (letterIndex >= 65 && letterIndex <= 90)
+        letterIndex -= 65;
+      else if (letterIndex >= 97 && letterIndex <= 122)
+        letterIndex -= 97;
+      else
+        letterIndex = 26;
+      console.log("processed letter " + i + " is " +letterIndex);
+    codewords[i] = lazyDictionary[letterIndex];
+  };
+
+  return codewords.join("<br />");
+};
+*/
 
 document.getElementById("translate").onclick = function(){print_translation()};
 
 function print_translation() {
      
-    document.getElementById("output").innerHTML = "success";
+    document.getElementById("output").innerHTML = translate_word();
 
 };
 
