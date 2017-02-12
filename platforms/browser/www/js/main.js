@@ -1,5 +1,3 @@
-/*
-
 var lazyDictionary = [
 "Alpha",
 "Bravo",
@@ -30,14 +28,58 @@ var lazyDictionary = [
 "[NOT A LETTER]",
 ];
 
-*/
+function translate_word() {
 
-function print_translation() {
-    var output = document.getElementById("output");
-    output.innerHTML = "whatever";
+    var codewords = [];
+    
+    var word = document.getElementById("input").value;
+    
+    for (var i = 0; i < word.length; i++) {
+      var letterIndex = word.charCodeAt(i);
+      if (letterIndex >= 65 && letterIndex <= 90)
+        letterIndex -= 65;
+      else if (letterIndex >= 97 && letterIndex <= 122)
+        letterIndex -= 97;
+      else
+        letterIndex = 26;
+    codewords[i] = lazyDictionary[letterIndex];
+  };
+
+    return codewords.join("<br />");
+
 };
 
-print_translation();
+/* function translate_word() {
+  
+  var codewords = [];
+  
+  var word = document.getElementById("input");
+  
+  for (var i = 0; i < word.length; i++) {
+      var letterIndex = word.charCodeAt(i);
+      console.log("input letter " + i + " is " +letterIndex);
+      if (letterIndex >= 65 && letterIndex <= 90)
+        letterIndex -= 65;
+      else if (letterIndex >= 97 && letterIndex <= 122)
+        letterIndex -= 97;
+      else
+        letterIndex = 26;
+      console.log("processed letter " + i + " is " +letterIndex);
+    codewords[i] = lazyDictionary[letterIndex];
+  };
+
+  return codewords.join("<br />");
+};
+*/
+
+document.getElementById("translate").onclick = function(){print_translation()};
+
+function print_translation() {
+     
+    document.getElementById("output").innerHTML = translate_word();
+
+};
+
 
 /* ACTUAL CODE I WANT BUT WILL BUILD TOWARDS IT INSTEAD
 

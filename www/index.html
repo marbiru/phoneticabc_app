@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
 
-    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-
-    <!--meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
     <!-- Required meta tags-->
     <meta charset="utf-8">
@@ -58,13 +47,13 @@
                 <div class="navbar-inner">
                     <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
                     <div class="center sliding">Phonetic Alphabet Translator</div>
-                    <div class="right">
-                        <!--
+                    <!-- div class="right">
+                        <COMMENT
                           Right link contains only icon - additional "icon-only" class
                           Additional "open-panel" class tells app to open panel when we click on this link
-                        -->
+                        COMMENTEND>
                         <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>
-                    </div>
+                    </div-->
                 </div>
             </div>
             <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
@@ -74,7 +63,7 @@
                     <!-- Scrollable page content -->
                     <div class="page-content">
                         <div class="content-block">
-                            <input type="text" id="input" value="Example">
+                            <input type="text" id="input">
                             <br />
                             <br />
                             <button id="translate">Translate!</button>
@@ -87,14 +76,13 @@
                     </div>
                 </div>
             </div>
-            <!-- Bottom Toolbar-->
+            <!-- Bottom Toolbar>
             <div class="toolbar">
                 <div class="toolbar-inner">
-                    <!-- Toolbar links -->
                     <a href="#" class="link">Link 1</a>
                     <a href="#" class="link">Link 2</a>
                 </div>
-            </div>
+            </div -->
         </div>
     </div>
 
