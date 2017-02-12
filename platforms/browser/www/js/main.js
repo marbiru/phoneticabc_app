@@ -1,3 +1,5 @@
+/*
+
 var lazyDictionary = [
 "Alpha",
 "Bravo",
@@ -27,6 +29,17 @@ var lazyDictionary = [
 "Zulu",
 "[NOT A LETTER]",
 ];
+
+*/
+
+function print_translation() {
+    var output = document.getElementById("output");
+    output.innerHTML = "whatever";
+};
+
+print_translation();
+
+/* ACTUAL CODE I WANT BUT WILL BUILD TOWARDS IT INSTEAD
 
 function translate_word() {
   
@@ -58,3 +71,5 @@ function print_translation() {
     var output = document.getElementById("output");
     output.innerHTML = translate_word();
 };
+
+*/
