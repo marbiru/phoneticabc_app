@@ -1,5 +1,3 @@
-/*
-
 var lazyDictionary = [
 "Alpha",
 "Bravo",
@@ -30,11 +28,25 @@ var lazyDictionary = [
 "[NOT A LETTER]",
 ];
 
-*/
-
 function translate_word() {
+
+    var codewords = [];
+    
     var word = document.getElementById("input").value;
-    return word;
+    
+    for (var i = 0; i < word.length; i++) {
+      var letterIndex = word.charCodeAt(i);
+      if (letterIndex >= 65 && letterIndex <= 90)
+        letterIndex -= 65;
+      else if (letterIndex >= 97 && letterIndex <= 122)
+        letterIndex -= 97;
+      else
+        letterIndex = 26;
+    codewords[i] = lazyDictionary[letterIndex];
+  };
+
+    return codewords.join("<br />");
+
 };
 
 /* function translate_word() {
@@ -42,8 +54,6 @@ function translate_word() {
   var codewords = [];
   
   var word = document.getElementById("input");
-  
-  var codewords = [];
   
   for (var i = 0; i < word.length; i++) {
       var letterIndex = word.charCodeAt(i);
