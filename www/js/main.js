@@ -25,6 +25,7 @@ var lazyDictionary = [
 "X-Ray",
 "Yankee",
 "Zulu",
+" ",
 "[NOT A LETTER]",
 ];
 
@@ -34,14 +35,18 @@ function translate_word() {
     
     var word = document.getElementById("input").value;
     
+    console.log(word.charCodeAt(1));
+
     for (var i = 0; i < word.length; i++) {
       var letterIndex = word.charCodeAt(i);
       if (letterIndex >= 65 && letterIndex <= 90)
         letterIndex -= 65;
       else if (letterIndex >= 97 && letterIndex <= 122)
         letterIndex -= 97;
-      else
+      else if (letterIndex == 32)
         letterIndex = 26;
+      else
+        letterIndex = 27;
     codewords[i] = lazyDictionary[letterIndex];
   };
 
