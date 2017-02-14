@@ -25,6 +25,16 @@ var lazyDictionary = [
 "X-Ray",
 "Yankee",
 "Zulu",
+"Zero",
+"One",
+"Two",
+"Three",
+"Four",
+"Five",
+"Six",
+"Seven",
+"Eight",
+"Nine",
 " ",
 "[NOT A LETTER]",
 ];
@@ -34,20 +44,28 @@ function translate_word() {
     var codewords = [];
     
     var word = document.getElementById("input").value;
-    
-    console.log(word.charCodeAt(1));
 
+    console.log(word.charCodeAt(0));
+    
     for (var i = 0; i < word.length; i++) {
+      
       var letterIndex = word.charCodeAt(i);
+      
       if (letterIndex >= 65 && letterIndex <= 90)
         letterIndex -= 65;
       else if (letterIndex >= 97 && letterIndex <= 122)
         letterIndex -= 97;
+      else if (letterIndex >=48 && letterIndex <=57)
+        letterIndex -= 22;
       else if (letterIndex == 32)
-        letterIndex = 26;
+        letterIndex = 36;
       else
-        letterIndex = 27;
+        letterIndex = 37;
+
+    console.log(word.charCodeAt(0));
+
     codewords[i] = lazyDictionary[letterIndex];
+
   };
 
     return codewords.join("<br />");
