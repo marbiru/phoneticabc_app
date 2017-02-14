@@ -19,7 +19,11 @@
 }
 
 .content-block {
-  margin-top: 0px
+  margin-top: 0px;
+}
+
+.about {
+  font-size: 20px;
 }
 
 #input {
